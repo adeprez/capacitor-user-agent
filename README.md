@@ -9,6 +9,21 @@ npm install @adeprez/capacitor-user-agent
 npx cap sync
 ```
 
+## Usage
+
+```typescript
+import { UserAgent } from '@adeprez/capacitor-user-agent';
+
+async getMyUserAgent(): Promise<string> {
+  const result = await UserAgent.get();
+  return result.userAgent;
+}
+
+setMyUserAgent(userAgent: string): Promise<void> {
+  return UserAgent.set({userAgent});
+}
+```
+
 ## API
 
 <docgen-index>
