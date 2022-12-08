@@ -3,9 +3,8 @@ import { WebPlugin } from '@capacitor/core';
 import type { UserAgentPlugin } from './definitions';
 
 export class UserAgentWeb extends WebPlugin implements UserAgentPlugin {
-  
-  async get(): Promise<{userAgent: string}> {
-    return {userAgent: navigator.userAgent};
+  async get(): Promise<{ userAgent: string }> {
+    return { userAgent: navigator.userAgent };
   }
 
   async set(): Promise<void> {
@@ -15,5 +14,4 @@ export class UserAgentWeb extends WebPlugin implements UserAgentPlugin {
   reset(): Promise<void> {
     throw new Error('Unable to reset user agent on web');
   }
-
 }

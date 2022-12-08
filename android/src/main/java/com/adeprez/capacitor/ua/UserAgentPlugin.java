@@ -1,15 +1,14 @@
 package com.adeprez.capacitor.ua;
 
 import android.webkit.WebSettings;
-
 import com.getcapacitor.Bridge;
 import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.BridgeWebViewClient;
+import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.getcapacitor.JSObject;
 
 @CapacitorPlugin(name = "UserAgent")
 public class UserAgentPlugin extends Plugin {
@@ -18,7 +17,7 @@ public class UserAgentPlugin extends Plugin {
     public void get(PluginCall call) {
         JSObject ret = new JSObject();
         String userAgent = bridge.getWebView().getSettings().getUserAgentString();
-        ret.put("userAgent", userAgent)
+        ret.put("userAgent", userAgent);
         call.resolve(ret);
     }
 
@@ -34,5 +33,4 @@ public class UserAgentPlugin extends Plugin {
         bridge.getWebView().getSettings().setUserAgentString(null);
         call.resolve();
     }
-
 }

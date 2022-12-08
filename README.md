@@ -20,12 +20,15 @@ npx cap sync
 </docgen-index>
 
 <docgen-api>
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### get()
 
 ```typescript
 get() => Promise<{ userAgent: string; }>
 ```
+
+Get the Webview's user agent
 
 **Returns:** <code>Promise&lt;{ userAgent: string; }&gt;</code>
 
@@ -37,6 +40,8 @@ get() => Promise<{ userAgent: string; }>
 ```typescript
 set(options: { userAgent: string; }) => Promise<void>
 ```
+
+Update the Webview user agent (Android and iOS only)
 
 | Param         | Type                                |
 | ------------- | ----------------------------------- |
@@ -50,6 +55,8 @@ set(options: { userAgent: string; }) => Promise<void>
 ```typescript
 reset() => Promise<void>
 ```
+
+Reset the Webview user agent (Android and iOS only)
 
 --------------------
 
