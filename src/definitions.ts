@@ -1,3 +1,5 @@
 export interface UserAgentPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  get(): Promise<string>;
+  set(options: {userAgent: string}): Promise<void>;
+  reset(): Promise<void>;
 }

@@ -1,18 +1,23 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(UserAgentPlugin)
 public class UserAgentPlugin: CAPPlugin {
-    private let implementation = UserAgent()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func get(_ call: CAPPluginCall) {
         call.resolve([
-            "value": implementation.echo(value)
+            "value": "test"
         ])
+    }
+
+    @objc func set(_ call: CAPPluginCall) {
+        let userAgent = call.getString("userAgent") ?? ""
+        // ...
+        call.resolve()
+    }
+
+    @objc func reset(_ call: CAPPluginCall) {
+        // ...
+        call.resolve()
     }
 }

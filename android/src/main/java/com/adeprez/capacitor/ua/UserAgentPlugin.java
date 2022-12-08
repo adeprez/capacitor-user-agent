@@ -1,6 +1,5 @@
 package com.adeprez.capacitor.ua;
 
-import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -9,14 +8,23 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "UserAgent")
 public class UserAgentPlugin extends Plugin {
 
-    private UserAgent implementation = new UserAgent();
-
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void get(PluginCall call) {
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+        call.resolve("test");
     }
+
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    public void set(PluginCall call) {
+        String userAgent = call.getString("userAgent", "");
+
+        call.resolve();
+    }
+
+    @PluginMethod(returnType = PluginMethod.RETURN_NONE)
+    public void reset(PluginCall call) {
+
+        call.resolve();
+    }
+
 }
