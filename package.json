@@ -1,6 +1,6 @@
 {
   "name": "@adeprez/capacitor-user-agent",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "User Agent get/set/reset plugin for Capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

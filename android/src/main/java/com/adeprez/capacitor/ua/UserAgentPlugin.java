@@ -13,10 +13,17 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "UserAgent")
 public class UserAgentPlugin extends Plugin {
 
+    private WebSettings settings;
+
+    @Override
+    public void load() {
+        settings = bridge.getWebView().getSettings();
+    }
+
     @PluginMethod
     public void get(PluginCall call) {
         JSObject ret = new JSObject();
-        String userAgent = bridge.getWebView().getSettings().getUserAgentString();
+        String userAgent = settings.getUserAgentString();
         ret.put("userAgent", userAgent);
         call.resolve(ret);
     }
@@ -24,13 +31,13 @@ public class UserAgentPlugin extends Plugin {
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void set(PluginCall call) {
         String ua = call.getString("userAgent", null);
-        bridge.getWebView().getSettings().setUserAgentString(ua);
+        settings.setUserAgentString(ua);
         call.resolve();
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)
     public void reset(PluginCall call) {
-        bridge.getWebView().getSettings().setUserAgentString(null);
+        settings.setUserAgentString(null);
         call.resolve();
     }
 }

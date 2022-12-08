@@ -1,5 +1,4 @@
 export interface UserAgentPlugin {
-
   /**
    * Get the Webview's user agent
    */
