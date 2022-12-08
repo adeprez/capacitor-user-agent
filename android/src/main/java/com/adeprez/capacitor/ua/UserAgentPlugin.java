@@ -9,14 +9,17 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.adeprez.capacitor.ua.UserAgent;
+import com.getcapacitor.JSObject;
 
 @CapacitorPlugin(name = "UserAgent")
 public class UserAgentPlugin extends Plugin {
 
     @PluginMethod
     public void get(PluginCall call) {
-        call.resolve(bridge.getWebView().getSettings().getUserAgentString());
+        JSObject ret = new JSObject();
+        String userAgent = bridge.getWebView().getSettings().getUserAgentString();
+        ret.put("userAgent", userAgent)
+        call.resolve(ret);
     }
 
     @PluginMethod(returnType = PluginMethod.RETURN_NONE)

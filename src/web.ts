@@ -4,8 +4,8 @@ import type { UserAgentPlugin } from './definitions';
 
 export class UserAgentWeb extends WebPlugin implements UserAgentPlugin {
   
-  async get(): Promise<string> {
-    return navigator.userAgent;
+  async get(): Promise<{userAgent: string}> {
+    return {userAgent: navigator.userAgent};
   }
 
   async set(): Promise<void> {
