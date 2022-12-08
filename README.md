@@ -11,9 +11,46 @@ npx cap sync
 
 ## API
 
-<docgen-index></docgen-index>
+<docgen-index>
+
+* [`get()`](#get)
+* [`set(...)`](#set)
+* [`reset()`](#reset)
+
+</docgen-index>
 
 <docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
+
+### get()
+
+```typescript
+get() => Promise<{ userAgent: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ userAgent: string; }&gt;</code>
+
+--------------------
+
+
+### set(...)
+
+```typescript
+set(options: { userAgent: string; }) => Promise<void>
+```
+
+| Param         | Type                                |
+| ------------- | ----------------------------------- |
+| **`options`** | <code>{ userAgent: string; }</code> |
+
+--------------------
+
+
+### reset()
+
+```typescript
+reset() => Promise<void>
+```
+
+--------------------
+
 </docgen-api>
