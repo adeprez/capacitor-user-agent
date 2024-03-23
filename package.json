@@ -1,6 +1,6 @@
 {
   "name": "@adeprez/capacitor-user-agent",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "description": "User Agent get/set/reset plugin for Capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -61,7 +61,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^4.0.0 || ^5.0.0"
+    "@capacitor/core": ">=4.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
